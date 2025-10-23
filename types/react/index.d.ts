@@ -3005,6 +3005,27 @@ declare namespace React {
         name?: string | undefined;
         type?: "submit" | "reset" | "button" | undefined;
         value?: string | readonly string[] | number | undefined;
+
+        // Invoker Commands API
+        /**
+         * Specifies the action to be performed on the element referenced by commandfor.
+         * Supports built-in commands for dialogs and popovers, or custom commands starting with "--".
+         * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/command}
+         */
+        command?:
+            | "show-modal"
+            | "close"
+            | "request-close"
+            | "show-popover"
+            | "hide-popover"
+            | "toggle-popover"
+            | `--${string}`
+            | undefined;
+        /**
+         * Specifies the ID of the element to be controlled.
+         * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/commandForElement}
+         */
+        commandfor?: string | undefined;
     }
 
     interface CanvasHTMLAttributes<T> extends HTMLAttributes<T> {
